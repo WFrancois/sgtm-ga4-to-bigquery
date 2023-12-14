@@ -190,7 +190,9 @@ addEventCallback((containerId, eventData) => {
               'value': {}
             };
 
-            if (makeNumber(value)) {
+            if (keyString === 'transaction_id') {
+              obj.value.string_value = makeString(value);
+            } else if (makeNumber(value)) {
               obj.value.float_value = makeNumber(value);
             } else if (makeString(value)) {
               obj.value.string_value = makeString(value);
